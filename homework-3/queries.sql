@@ -16,7 +16,7 @@ WHERE employees.city = 'London' AND customers.city = 'London' AND shippers.compa
 SELECT product_name, units_in_stock, contact_name, phone FROM products
 JOIN suppliers USING(supplier_id)
 JOIN categories USING (category_id)
-WHERE discontinued = 1 AND units_in_stock < 25 AND category_name IN ('Dairy Products', 'Condiments')
+WHERE discontinued != 1 AND units_in_stock < 25 AND category_name IN ('Dairy Products', 'Condiments')
 ORDER BY units_in_stock
 
 -- 3. Список компаний заказчиков (company_name из табл customers), не сделавших ни одного заказа
